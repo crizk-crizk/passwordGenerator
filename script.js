@@ -9,8 +9,14 @@ function generatePassword() {
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   var specialCharacters = '!@#$%';
-  let randomIndex = Math.floor(Math.random() * 26);
-  return upperCase[randomIndex];
+
+  for (let i = 0; i < 8; i++) {
+    let randomIndex = Math.floor(Math.random() * 26);
+    result += upperCase[randomIndex];
+    console.log(result)
+  }
+
+  return result;
 }
 
 // Write password to the #password input
