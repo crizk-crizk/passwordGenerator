@@ -15,11 +15,18 @@ function generatePassword() {
   var lowerCaseAllowed = false 
   var specialCharactersAllowed = false
 
-
   var characterAmount = Number(prompt(
     "How many charachters do you want in your password?"
   ));
+  //make sure that the number of characteres entered is within the valid range
+  while(characterAmount < 8 || characterAmount > 128) {
+    characterAmount = Number(prompt(
+      "Please choose a number between 8 and 128."
+    ));
+  
+  }
 
+    //ask user what kind of characters they want in password
   numericsAllowed = prompt('Do you want numbers in your password?') === 'yes' ? true : false;
   upperCaseAllowed = prompt('Do you want upper case letters in your password?') === 'yes' ? true : false;
   lowerCaseAllowed = prompt('Do you want lower case letters in your password?') === 'yes' ? true : false;
