@@ -26,11 +26,16 @@ function generatePassword() {
   
   }
 
+  // validated at least one character type should be selected
+  while (!(numericsAllowed || upperCaseAllowed || lowerCaseAllowed || specialCharactersAllowed)) {
     //ask user what kind of characters they want in password
-  numericsAllowed = prompt('Do you want numbers in your password?') === 'yes' ? true : false;
-  upperCaseAllowed = prompt('Do you want upper case letters in your password?') === 'yes' ? true : false;
-  lowerCaseAllowed = prompt('Do you want lower case letters in your password?') === 'yes' ? true : false;
-  specialCharactersAllowed = prompt('Do you want special characters in your password?') === 'yes' ? true : false;
+    numericsAllowed = prompt('Do you want numbers in your password?') === 'yes' ? true : false;
+    upperCaseAllowed = prompt('Do you want upper case letters in your password?') === 'yes' ? true : false;
+    lowerCaseAllowed = prompt('Do you want lower case letters in your password?') === 'yes' ? true : false;
+    specialCharactersAllowed = prompt('Do you want special characters in your password?') === 'yes' ? true : false;
+  
+  }
+
 
   console.log(numericsAllowed, upperCaseAllowed, lowerCaseAllowed, specialCharactersAllowed);
 
@@ -49,8 +54,9 @@ function generatePassword() {
   }
 
 
+
   for (let i = 0; i < characterAmount; i++) {
-    let randomIndex = Math.floor(Math.random() * 26);
+    let randomIndex = Math.floor(Math.random() * allowedCharacters.length);
     result += allowedCharacters[randomIndex];
     console.log(result);
   }
