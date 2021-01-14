@@ -34,9 +34,24 @@ function generatePassword() {
 
   console.log(numericsAllowed, upperCaseAllowed, lowerCaseAllowed, specialCharactersAllowed);
 
+  var allowedCharacters = '';
+  if (numericsAllowed) {
+    allowedCharacters = numerics
+  }
+  if (upperCaseAllowed) {
+    allowedCharacters = allowedCharacters + upperCase
+  }
+  if (lowerCaseAllowed) {
+    allowedCharacters = allowedCharacters + lowerCase
+  }
+  if (specialCharactersAllowed) {
+    allowedCharacters = allowedCharacters + specialCharacters
+  }
+
+
   for (let i = 0; i < characterAmount; i++) {
     let randomIndex = Math.floor(Math.random() * 26);
-    result += upperCase[randomIndex];
+    result += allowedCharacters[randomIndex];
     console.log(result);
   }
 
