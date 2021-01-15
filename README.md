@@ -6,6 +6,9 @@
 * Once all the required information is acquired from the user, a random password is displayed in a text area on the body of the website. 
 
 ## Links
+### Repo: https://github.com/crizk-crizk/passwordGenerator
+
+### Live Link: https://crizk-crizk.github.io/passwordGenerator/ 
 
 ## Screenshots
 ![](./screenshots/generatePASS-1.png)
