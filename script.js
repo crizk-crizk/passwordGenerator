@@ -27,13 +27,17 @@ function generatePassword() {
   }
 
   // validated at least one character type should be selected
-  while (!(numericsAllowed || upperCaseAllowed || lowerCaseAllowed || specialCharactersAllowed)) {
+  while (!numericsAllowed && !upperCaseAllowed && !lowerCaseAllowed && !specialCharactersAllowed) {
     //ask user what kind of characters they want in password
     numericsAllowed = prompt('Do you want numbers in your password?') === 'yes' ? true : false;
     upperCaseAllowed = prompt('Do you want upper case letters in your password?') === 'yes' ? true : false;
     lowerCaseAllowed = prompt('Do you want lower case letters in your password?') === 'yes' ? true : false;
     specialCharactersAllowed = prompt('Do you want special characters in your password?') === 'yes' ? true : false;
-  
+    
+    if (!numericsAllowed && !upperCaseAllowed && !lowerCaseAllowed && !specialCharactersAllowed) {
+    alert ('You must choose at least one of the character types.');
+    }
+
   }
 
 
